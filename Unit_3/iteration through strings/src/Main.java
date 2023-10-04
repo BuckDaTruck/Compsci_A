@@ -5,8 +5,25 @@ public class Main {
         System.out.println(prefixAgain("abXYabc", 1));
         System.out.println(catDog("1cat1cadodog"));
         System.out.println(endOther("Hiabc", "abc"));
+        System.out.println(bobThere("acbob"));
+        System.out.println(mixString("abc", "xyz"));
     }
-
+    public static String mixString(String a, String b) {
+        String result = "";
+        for (int i = 0; i < a.length(); i++) {
+            result += a.charAt(i);
+            result += b.charAt(i);
+        }
+        return result;
+    }
+    public static boolean bobThere(String str) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.charAt(i) == 'b' && str.charAt(i + 2) == 'b') {
+                return true;
+            }
+        }
+        return false;
+    }
     public static boolean endOther(String a, String b) {
         String a2 = a.toLowerCase();
         String b2 = b.toLowerCase();
