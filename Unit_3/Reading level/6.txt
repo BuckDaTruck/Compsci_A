@@ -1,0 +1,2 @@
+Quantum entanglement is a phenomenon in quantum mechanics where two particles can become correlated in such a way that their properties are interdependent, regardless of the distance between them. 
+This concept is foundational to understanding quantum physics and has implications for quantum computing and communication.
