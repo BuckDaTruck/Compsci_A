@@ -69,3 +69,4 @@ public class Main {
         System.out.println("Change Due: "+" Dollars: "+dollar+" Quarters: "+quarter+" Dimes: "+dime+" Nickles: "+nickles+" Pennies: "+pennies);
     } // this one took a sec
 }
+//Code written by Buckley Wiley

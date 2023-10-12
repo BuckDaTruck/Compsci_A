@@ -6,3 +6,4 @@ public class table{
         x++;System.out.println(x);
     }
 }
+//Code written by Buckley Wiley

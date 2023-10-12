@@ -8,7 +8,8 @@ public class Unit3Project {
     static int middleSchoolCount = 0;
     static int highSchoolCount = 0;
     static int advancedCount = 0;
-
+    static double totalCount = 0;
+    static double totalWords = 0;
     static String kindergartenWords = "";
     static String elementaryWords = "";
     static String middleSchoolWords = "";
@@ -51,8 +52,11 @@ public class Unit3Project {
             char start = text.charAt(i);
             if (Character.isLetterOrDigit(start)) {
                 word += start;
+
             } else {
                 if (word.length() > 0) {
+                    totalWords++;
+                    totalCount += word.length();
                     if (word.length() <= 4) {
                         kindergartenCount++;
                         kindergartenWords = kindergartenWords + word + " ";
@@ -77,22 +81,34 @@ public class Unit3Project {
 
     public static void finish() {
         mes("-------------------Level Breakdowns-------------------");
+        System.out.print("Kindergarten-Level words:");
+        System.out.println(kindergartenCount);
+        System.out.print("Elementary-Level words:");
+        System.out.println(elementaryCount);
+        System.out.print("Middle-School-Level words:");
+        System.out.println(middleSchoolCount);
+        System.out.print("High-School-Level words:");
+        System.out.println(highSchoolCount);
+        System.out.print("Advanced-Level words:");
+        System.out.println(advancedCount);
 
         mes("-------------------Words In Each Category -------------------");
-        mes("Kindergarten-Level words:");
+        mes("-------Kindergarten-Level words:-------");
         mes(kindergartenWords);
-        mes("Elementary-Level words:");
+        mes("-------Elementary-Level words:-------");
         mes(elementaryWords);
-        mes("Middle-School-Level words:");
+        mes("-------Middle-School-Level words:-------");
         mes(middleSchoolWords);
-        mes("High-School-Level words:");
+        mes("-------High-School-Level words:-------");
         mes(highSchoolWords);
-        mes("Advanced-Level words:");
+        mes("-------Advanced-Level words:-------");
         mes(advancedWords);
+        System.out.print("Total words:");
+        System.out.println(totalWords);
+        System.out.print("Total Characters:");
+        System.out.println(totalCount);
 
-        double averageLength = (kindergartenCount * 4 + elementaryCount * 6 + middleSchoolCount * 10
-                + highSchoolCount * 14 + advancedCount * 20)
-                / (double) (kindergartenCount + elementaryCount + middleSchoolCount + highSchoolCount + advancedCount);
+        double averageLength =  totalCount/totalWords;
         String readingLevel = "";
         if (averageLength <= 4) {
             readingLevel = "kindergarten";
@@ -116,3 +132,4 @@ public class Unit3Project {
         System.out.println(mes);
     }
 }
+//Code written by Buckley Wiley
