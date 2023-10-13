@@ -1,4 +1,3 @@
-
 /*
  * Author: Buckley Wiley
  * Contact: buckley@buckleywiley.com
@@ -37,28 +36,49 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
     static String advancedWords = "";
     private JLabel fileNameLabel;
     private JTextField fileNameField;
+    private JButton browseButton;
     private JButton analyzeButton;
     private JButton saveButton;
+    private JButton exitButton;
     private JTextArea outputArea;
 
+    /**
+     * This class represents the GUI for the Text Difficulty Analyzer program. It
+     * contains components for selecting a file to analyze, analyzing the text,
+     * saving the output, and displaying the output. The GUI also supports drag and
+     * drop functionality for selecting a file.
+     * The GUI is constructed using a JFrame and various Swing components such as
+     * JLabel, JTextField, JButton, and JTextArea. Action listeners are added to the
+     * buttons to handle user input.
+     * The GUI is set up with a BorderLayout, with the input components in the NORTH
+     * region and the output component in the CENTER region.
+     */
     public Unit3ProjectGui() {
         super("Text Difficulty Analyzer");
 
         // Set up the GUI components
         fileNameLabel = new JLabel("Enter the file name:");
         fileNameField = new JTextField(20);
+        fileNameField.setEditable(false);
+        browseButton = new JButton("Browse");
         analyzeButton = new JButton("Analyze");
         saveButton = new JButton("Save");
         outputArea = new JTextArea(20, 40);
         outputArea.setEditable(false);
+        JButton exitButton = new JButton("Exit");
+        exitButton.addActionListener(e -> System.exit(0));
 
         // Add the components to the GUI
         JPanel inputPanel = new JPanel(new FlowLayout());
         inputPanel.add(fileNameLabel);
         inputPanel.add(fileNameField);
+        inputPanel.add(browseButton);
         inputPanel.add(analyzeButton);
         inputPanel.add(saveButton);
+        inputPanel.add(exitButton);
 
+        inputPanel.add(saveButton);
+        inputPanel.add(exitButton);
         JScrollPane outputScrollPane = new JScrollPane(outputArea);
 
         Container contentPane = getContentPane();
@@ -67,6 +87,7 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
         contentPane.add(outputScrollPane, BorderLayout.CENTER);
 
         // Add action listeners to the GUI components
+        browseButton.addActionListener(e -> chooseFile());
         analyzeButton.addActionListener(e -> analyzeText());
         saveButton.addActionListener(e -> saveOutput());
 
@@ -108,6 +129,20 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
     public void dropActionChanged(DropTargetDragEvent e) {
     }
 
+    private void chooseFile() {
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(this);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            fileNameField.setText(file.getAbsolutePath());
+        }
+    }
+
+    /**
+     * Analyzes the text in the file specified by the user and displays the results in the output area.
+     * The results include the original text, level breakdowns, words in each category, total words, total characters,
+     * average word length, and reading level.
+     */
     private void analyzeText() {
         String fileName = fileNameField.getText();
         String text = textToString(fileName);
@@ -218,6 +253,11 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
         }
     }
 
+    /**
+     * The main method of the Unit3ProjectGui class.
+     * It creates a new instance of the Unit3ProjectGui class and runs it on the event dispatch thread.
+     * @param args an array of command-line arguments for the application
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new Unit3ProjectGui();
