@@ -110,7 +110,7 @@ public class Unit3Project {
         mes(highSchoolWords);
         mes("-------Advanced-Level words:-------");
         mes(advancedWords);
-        System.out.print("Total words:");
+        System.out.print("Total Words:");
         System.out.println(totalWords);
         System.out.print("Total Characters:");
         System.out.println(totalCount);
