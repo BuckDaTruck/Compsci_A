@@ -1,3 +1,10 @@
+
+/*
+ * Author: Buckley Wiley
+ * Contact: buckley@buckleywiley.com
+ * GitHub: https://github.com/BuckDaTruck
+ * Description: Unit 3 project to summarize text difficulty and reading level.
+ */
 import java.io.File;
 import java.util.Scanner;
 

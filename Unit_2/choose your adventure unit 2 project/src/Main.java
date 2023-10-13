@@ -1,3 +1,8 @@
+/*
+ * Author: Buckley Wiley
+ * Contact: buckley@buckleywiley.com
+ * GitHub: https://github.com/BuckDaTruck
+ */
 import java.util.Scanner;
 import java.util.Random;
 
