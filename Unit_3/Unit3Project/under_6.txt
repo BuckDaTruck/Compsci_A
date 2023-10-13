@@ -1,3 +1,10 @@
-This is a test file for middle school-level words.
-Middle school students have a good vocabulary.
-The words in this category may require a bit more effort to understand.
+Breeze
+Rabbit
+Guitar
+Tomato
+Laptop
+Orange
+Window
+Banana
+Candle
+Turtle
