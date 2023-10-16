@@ -6,20 +6,20 @@
  * Note: Not to be used as submission for project grade, external tools were used.
  */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import java.awt.dnd.DnDConstants;
-import java.awt.dnd.DropTarget;
-import java.awt.dnd.DropTargetDragEvent;
-import java.awt.dnd.DropTargetDropEvent;
-import java.awt.dnd.DropTargetEvent;
-import java.awt.dnd.DropTargetListener;
-import java.io.File;
-import java.io.FileWriter;
-import java.util.List;
-import java.util.Scanner;
+import javax.swing.*;//Swing is a GUI widget toolkit for Java. It is part of Oracle's Java Foundation Classes – an API for providing a graphical user interface for Java programs. Swing was developed to provide a more sophisticated set of GUI components than the earlier Abstract Window Toolkit.
+import java.awt.*;//Contains all of the classes for creating user interfaces and for painting graphics and images. A user interface object such as a button or a scrollbar is called, in AWT terminology, a component. The Component class is the root of all AWT components.
+import java.awt.datatransfer.DataFlavor;//The DataFlavor class represents a specific data format that can be transferred between different applications or within the same application. It is used in conjunction with the Transferable interface to provide a way to transfer data between different components or applications.
+import java.awt.datatransfer.Transferable;//The Transferable interface is used to represent the data that is being transferred between different components or applications. It defines a set of methods that allow the data to be retrieved in different formats, such as plain text, HTML, or a custom format.
+import java.awt.dnd.DnDConstants;//The DnDConstants class defines a set of constants that are used in drag and drop operations. These constants are used to specify the type of drag and drop operation that is being performed, such as copying or moving data.
+import java.awt.dnd.DropTarget;//The DropTarget class is used to define a drop target for drag and drop operations. It is typically used in conjunction with the DropTargetListener interface to handle drag and drop events.
+import java.awt.dnd.DropTargetDragEvent;//The DnDDropTargetDragEvent class is used to encapsulate the information that is required to process a drag and drop operation. It defines a set of methods that are used to retrieve information about the drag and drop operation, such as the location of the drag and the type of drag and drop operation that is being performed.
+import java.awt.dnd.DropTargetDropEvent;//The DropTargetDropEvent class is used to encapsulate the information that is required to process a drop event. It defines a set of methods that are used to retrieve information about the drop event, such as the location of the drop and the type of drag and drop operation that is being performed.
+import java.awt.dnd.DropTargetEvent;//The DropTargetEvent class is the base class for the events that are generated when a drop occurs. It defines a set of methods that are used to retrieve information about the drop event, such as the location of the drop and the type of drag and drop operation that is being performed.
+import java.awt.dnd.DropTargetListener;//The DropTargetListener interface is used to define the methods that are called when a drop occurs. It defines a set of methods that are used to handle the drop event, such as the location of the drop and the type of drag and drop operation that is being performed.
+import java.io.File;//The File interface is used to represent a file or directory on the file system. It defines a set of methods that are used to retrieve information about the file or directory, such as the name, size, and last modified date.
+import java.io.FileWriter;//The File Writer class is used to write data to a file. It defines a set of methods that are used to write data to a file, such as a string or an array of bytes.
+import java.util.List;//The util list is used to create a list of objects. It defines a set of methods that are used to add, remove, and retrieve objects from the list.
+import java.util.Scanner;//The Scanner is used to read input from the keyboard. It defines a set of methods that are used to read input from the keyboard, such as a string or an integer.
 
 public class Unit3ProjectGui extends JFrame implements DropTargetListener {
     static int kindergartenCount = 0;
@@ -39,7 +39,6 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
     private JButton browseButton;
     private JButton analyzeButton;
     private JButton saveButton;
-    private JButton exitButton;
     private JTextArea outputArea;
 
     /**
@@ -76,15 +75,16 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
         inputPanel.add(analyzeButton);
         inputPanel.add(saveButton);
         inputPanel.add(exitButton);
-
-        inputPanel.add(saveButton);
-        inputPanel.add(exitButton);
-        JScrollPane outputScrollPane = new JScrollPane(outputArea);
+        outputArea = new JTextArea(20, 40);
+        outputArea.setEditable(false);
+        outputArea.setLineWrap(true); // enable line wrapping
+        outputArea.setWrapStyleWord(true); // wrap at word boundaries
+        JScrollPane scrollPane = new JScrollPane(outputArea);
 
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
         contentPane.add(inputPanel, BorderLayout.NORTH);
-        contentPane.add(outputScrollPane, BorderLayout.CENTER);
+        contentPane.add(scrollPane, BorderLayout.CENTER);
 
         // Add action listeners to the GUI components
         browseButton.addActionListener(e -> chooseFile());
@@ -115,7 +115,8 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
         e.acceptDrop(DnDConstants.ACTION_COPY_OR_MOVE);
         Transferable transferable = e.getTransferable();
         if (transferable.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
-            try {
+            /* */try {
+                @SuppressWarnings("unchecked")
                 List<File> files = (List<File>) transferable.getTransferData(DataFlavor.javaFileListFlavor);
                 if (files.size() > 0) {
                     fileNameField.setText(files.get(0).getAbsolutePath());
@@ -139,8 +140,10 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
     }
 
     /**
-     * Analyzes the text in the file specified by the user and displays the results in the output area.
-     * The results include the original text, level breakdowns, words in each category, total words, total characters,
+     * Analyzes the text in the file specified by the user and displays the results
+     * in the output area.
+     * The results include the original text, level breakdowns, words in each
+     * category, total words, total characters,
      * average word length, and reading level.
      */
     private void analyzeText() {
@@ -255,7 +258,9 @@ public class Unit3ProjectGui extends JFrame implements DropTargetListener {
 
     /**
      * The main method of the Unit3ProjectGui class.
-     * It creates a new instance of the Unit3ProjectGui class and runs it on the event dispatch thread.
+     * It creates a new instance of the Unit3ProjectGui class and runs it on the
+     * event dispatch thread.
+     * 
      * @param args an array of command-line arguments for the application
      */
     public static void main(String[] args) {
