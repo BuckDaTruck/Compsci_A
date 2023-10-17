@@ -2,6 +2,7 @@
  * Author: Buckley Wiley
  * Contact: buckley@buckleywiley.com
  * GitHub: https://github.com/BuckDaTruck
+ * For help, visit: http://buckleywiley.com/forum/Code/forum.html
  * Description: Unit 3 project to summarize text difficulty and reading level.
  * Note: Not to be used as submission for project grade, external tools were used. Use the version without a gui for submission.
  */

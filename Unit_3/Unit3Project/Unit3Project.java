@@ -3,13 +3,13 @@
  * Author: Buckley Wiley
  * Contact: buckley@buckleywiley.com
  * GitHub: https://github.com/BuckDaTruck
+ * For help, visit: http://buckleywiley.com/forum/Code/forum.html
  * Description: Unit 3 project to summarize text difficulty and reading level.
  */
 import java.io.File;
 import java.util.Scanner;
 
 public class Unit3Project {
-
     static int kindergartenCount = 0;
     static int elementaryCount = 0;
     static int middleSchoolCount = 0;
@@ -49,7 +49,6 @@ public class Unit3Project {
         } catch (Exception e) {
             System.out.println("Unable to locate " + fileName);
         }
-
         return temp.trim();
     }
 
@@ -59,7 +58,6 @@ public class Unit3Project {
             char start = text.charAt(i);
             if (Character.isLetterOrDigit(start)) {
                 word += start;
-
             } else {
                 if (word.length() > 0) {
                     totalWords++;
@@ -98,7 +96,6 @@ public class Unit3Project {
         System.out.println(highSchoolCount);
         System.out.print("Advanced-Level words:");
         System.out.println(advancedCount);
-
         mes("-------------------Words In Each Category -------------------");
         mes("-------Kindergarten-Level words:-------");
         mes(kindergartenWords);
@@ -114,7 +111,6 @@ public class Unit3Project {
         System.out.println(totalWords);
         System.out.print("Total Characters:");
         System.out.println(totalCount);
-
         double averageLength =  totalCount/totalWords;
         String readingLevel = "";
         if (averageLength <= 4) {
