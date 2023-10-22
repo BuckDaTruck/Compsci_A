@@ -111,7 +111,7 @@ public class Unit3Project {
         System.out.println(totalWords);
         System.out.print("Total Characters:");
         System.out.println(totalCount);
-        double averageLength =  totalCount/totalWords;
+        double averageLength = totalCount / totalWords;
         String readingLevel = "";
         if (averageLength <= 4) {
             readingLevel = "kindergarten";
@@ -135,4 +135,4 @@ public class Unit3Project {
         System.out.println(mes);
     }
 }
-//Code written by Buckley Wiley
+// Code written by Buckley Wiley
