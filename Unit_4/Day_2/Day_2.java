@@ -7,6 +7,7 @@ public class Day_2 {
         printArray(numbers);
         System.out.println("Average: " + average(numbers));
         System.out.println("Centered Average: " + centeredAverage(numbers));
+        
     }
     
     public static void printArray(double[] numbers) {

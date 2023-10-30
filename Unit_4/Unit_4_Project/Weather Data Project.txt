@@ -1,0 +1,52 @@
+﻿Weather Data Project
+
+
+You have been tasked with processing weather data. You will be provided with data for a year’s worth of temperatures, and you will be asked to calculate and report different statistics.
+
+
+Weather data for a particular day follows this format:
+        mm/dd/yyyy-low-high           for example:        12/04/2000-3-32
+
+
+That data point is for December 4th, 2000 where the lowest temperature for the day is only 3 degrees and the highest temperature is 32 degrees. A chilly one!
+
+
+You will be provided with a .zip file of a project. In that project, you will be provided with a .txt file of (fictional) data, and the code to read it into an array of Strings. After downloading and unzipping the project folder, rename the folder to include your name!
+
+
+Ultimately, you should write an interactive program that will prompt the user to do one of the following tasks. 
+Once you know which task, you may need to ask additional questions to the user for more information to complete the task.
+After receiving their input, you should perform the task, and then prompt again for a new task. This should continue until the user eventually says “stop”.
+
+
+* Show the highest and lowest temperature for a particular date. 
+   * Also show the day before and the day after, if they exist.
+* Provide the overall highest and lowest temperature for a particular month.
+* Calculate the average temperature for a particular month.
+* Find the date of the most drastic temperature change between a range of 2 dates
+   * Ex: From 01/01/2000 to 12/31/2000, the most drastic change was on 02/28/2000
+* Print out yearly statistics
+   * For each month, provide lowest, highest, and average temperatures
+   * Also show the overall highest and lowest temperatures for the year
+
+
+Code quality and style are important. Consider writing functions to complete tasks, and calling those functions at the appropriate time. Projects whose entire solution is coded in the main method will not receive full credit.
+
+
+Some concepts to remember:
+* a.indexOf(b) will tell you the location of b in a, given a and b are both Strings
+* a.substring(x, y) will give you a piece of a, starting at index x going up to, but not including index y
+* Integer.parseInt(“42”) will change the data type of that 42 from a String to an int
+* Functions can use arrays as parameters and return types
+* You can write functions to complete helpful, smaller tasks
+   * For example, could you find the index of a particular date in the weather data array? You don’t need an index specifically for any task, but would it be helpful to know? What about how many days are in a month?
+Specifications
+* Your code must compile and run without requiring any modification to receive above 70% credit for the project.
+* Your code must work on any .txt file, provided it follows the same format as the given file.  
+
+
+Submission:
+* Submit a single .zip file of your “Weather Data Project” folder, complete with src/ folder and at least one data (.txt) file inside of it.
+   * To make a .zip file, locate your project folder in finder (it may be in downloads)
+   * Once you’ve found the folder, right click and select “compress”
+   * The .zip file that creates is what you submit
