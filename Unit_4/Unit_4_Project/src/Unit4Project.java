@@ -12,37 +12,22 @@ import java.util.Scanner;
 
 public class Unit4Project {
     public static void main(String[] args) {
-        System.out.println("Starting Weather Data Analysis");
-        wait(100);
-        System.out.println("Starting Weather Data Analysis.");
-        wait(100);
-        System.out.println("Starting Weather Data Analysis..");
-        wait(100);
-        System.out.println("Starting Weather Data Analysis...");
-        wait(500);
-        System.out.println("Loading Data");
-        wait(100);
-        System.out.println("Loading Data.");
-        wait(100);
-        System.out.println("Loading Data..");
-        wait(100);
-        System.out.println("Loading Data...");
-        wait(100);
-        System.out.println(
-                "╔╗╔╗╔╗╔╗────────╔══╗────╔╗─────╔╗\n║║║║║║║║────────╚╣╠╝────║║────╔╝╚╗\n║║║║║╠╣║╔══╦╗─╔╗─║║╔═╗╔═╝╠╗╔╦═╩╗╔╬═╦╦══╦══╗\n║╚╝╚╝╠╣║║║═╣║─║║─║║║╔╗╣╔╗║║║║══╣║║╔╬╣║═╣══╣\n╚╗╔╗╔╣║╚╣║═╣╚═╝║╔╣╠╣║║║╚╝║╚╝╠══║╚╣║║║║═╬══║\n─╚╝╚╝╚╩═╩══╩═╗╔╝╚══╩╝╚╩══╩══╩══╩═╩╝╚╩══╩══╝\n───────────╔═║\n───────────╚══╝\n");
-        wait(1000);
         int points = 3;
         int days = 365;
         String[] data = readData();
         int[][] hla = new int[days][points];
         int[][] monthStartEnd = new int[12][2];
-        int[][] hlaMonth = new int[12][3];
-        // I am aware this is a 2d array and no chatgpt did not generate that i just
-        // wanted to make it easier to code.
+        int[][] hlaMonth = new int[12][points];
         int[] hlaYear = new int[days];
+        startup();
         parseMonth(data, monthStartEnd, days);
         parseHLA(data, hla, days);
         hlaMonthStartEnd(hla, monthStartEnd, days, points, hlaMonth);
+        loop(data, hla, monthStartEnd, days, points, hlaMonth, hlaYear);
+    }
+
+    public static void loop(String[] data, int[][] hla, int[][] monthStartEnd, int days, int points, int[][] hlaMonth,
+            int[] hlaYear) {
         for (int i = 0; i < 12; i++) {
             System.out.println("Month " + (i + 1) + " starts at position " + monthStartEnd[i][0]
                     + " and ends at position " + monthStartEnd[i][1]);
@@ -72,13 +57,35 @@ public class Unit4Project {
                     wait(100);
                 }
                 hlaYear(hla, days, hlaYear);
-                  wait(1000);
+                wait(1000);
             }
             if (choice == 5) {
                 end = true;
             }
             choice = 0;
         }
+    }
+
+    public static void startup() {
+        System.out.println("Starting Weather Data Analysis");
+        wait(100);
+        System.out.println("Starting Weather Data Analysis.");
+        wait(100);
+        System.out.println("Starting Weather Data Analysis..");
+        wait(100);
+        System.out.println("Starting Weather Data Analysis...");
+        wait(500);
+        System.out.println("Loading Data");
+        wait(100);
+        System.out.println("Loading Data.");
+        wait(100);
+        System.out.println("Loading Data..");
+        wait(100);
+        System.out.println("Loading Data...");
+        wait(100);
+        System.out.println(
+                "╔╗╔╗╔╗╔╗────────╔══╗────╔╗─────╔╗\n║║║║║║║║────────╚╣╠╝────║║────╔╝╚╗\n║║║║║╠╣║╔══╦╗─╔╗─║║╔═╗╔═╝╠╗╔╦═╩╗╔╬═╦╦══╦══╗\n║╚╝╚╝╠╣║║║═╣║─║║─║║║╔╗╣╔╗║║║║══╣║║╔╬╣║═╣══╣\n╚╗╔╗╔╣║╚╣║═╣╚═╝║╔╣╠╣║║║╚╝║╚╝╠══║╚╣║║║║═╬══║\n─╚╝╚╝╚╩═╩══╩═╗╔╝╚══╩╝╚╩══╩══╩══╩═╩╝╚╩══╩══╝\n───────────╔═║\n───────────╚══╝\n");
+        wait(1000);
     }
 
     public static void largeTempChange(String[] data, int[][] hla, int days) {
@@ -129,20 +136,7 @@ public class Unit4Project {
         }
         System.out.println(dateWithMaxChange + " had the largest temperature change of " + maxTemperatureChange
                 + " between the dates" + date + " and " + date2 + " spanning " + span + " days.");
-    wait(1000);
-        /*
-         * int maxTemperatureChange = 0;
-         * String dateWithMaxChange = "";
-         * for (int i = 1; i < days - 1; i++) {
-         * int temperatureChange = Math.abs(hla[i][0] - hla[i][1]);
-         * if (temperatureChange > maxTemperatureChange) {
-         * maxTemperatureChange = temperatureChange;
-         * dateWithMaxChange = data[i].split("-")[0];
-         * }
-         * }
-         * System.out.println(dateWithMaxChange +
-         * " had the largest temperature change of " + maxTemperatureChange);
-         */
+        wait(1000);
     }
 
     public static int choice() {
@@ -180,7 +174,7 @@ public class Unit4Project {
         } else {
             System.out.println("Invalid month number.");
         }
-          wait(1000);
+        wait(1000);
     }
 
     public static void lineFromDate(String[] data, int[][] hla, int days) {
@@ -197,7 +191,7 @@ public class Unit4Project {
         }
         if (dayNumber == -1) {
             System.out.println("Date not found in the dataset.");
-              wait(1000);
+            wait(1000);
             return;
         }
         System.out.println(
@@ -217,12 +211,12 @@ public class Unit4Project {
         } else {
             System.out.println("No data available for the day after.");
         }
-          wait(1000);
+        wait(1000);
     }
 
     public static void hlaYear(int[][] hla, int days, int[] hlaYear) {
-        int high = 0;
-        int low = 0;
+        int high = hla[0][0];
+        int low = hla[0][1];
         for (int i = 0; i < days; i++) {
             if (hla[i][0] > high) {
                 high = hla[i][0];
@@ -238,22 +232,24 @@ public class Unit4Project {
             temp += hla[i][2];
         }
         hlaYear[2] = temp / days;
-        System.out.print("This years stats: High " + hlaYear[0] + " Low " + hlaYear[1] + " Average " + hlaYear[2]);
-          wait(1000);
+        System.out.println("This years stats: High " + hlaYear[0] + " Low " + hlaYear[1] + " Average " + hlaYear[2]);
+        wait(1000);
     }
 
     public static void hlaMonthStartEnd(int[][] hla, int[][] monthStartEnd, int days, int points, int[][] hlaMonth) {
         for (int i = 0; i < 12; i++) {
-            int high = 0;
-            int low = 0;
+            int high = hla[monthStartEnd[i][0]][0];
+            int low = hla[monthStartEnd[i][0]][1];
             int average = 0;
             for (int j = monthStartEnd[i][0]; j <= monthStartEnd[i][1]; j++) {
-                high += hla[j][0];
-                low += hla[j][1];
+                if (hla[j][0] > high) {
+                    high = hla[j][0];
+                }
+                if (low > hla[j][1]) {
+                    low = hla[j][1];
+                }
                 average += hla[j][2];
             }
-            high /= (monthStartEnd[i][1] - monthStartEnd[i][0] + 1);
-            low /= (monthStartEnd[i][1] - monthStartEnd[i][0] + 1);
             average /= (monthStartEnd[i][1] - monthStartEnd[i][0] + 1);
             hlaMonth[i][0] = high;
             hlaMonth[i][1] = low;
