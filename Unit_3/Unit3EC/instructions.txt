@@ -1,0 +1,49 @@
+You will submit one .java file that contains the following methods. 
+You get 50% of  points missed added to your test for a completely correct set of methods. 
+No partial credit. Should contain illustrative comments that show me your thought process and understanding. 
+This is due to me by 11:59pm on November 9th. No late submissions will be accepted.
+
+Write a void method called printFives that takes an integer parameter and prints every multiple of 5 between it and 0 inclusive, in descending order. 
+If the number is not greater than 0 print "error". Print all numbers on one line with single spaces in between.
+
+
+Write a method called sumEvens which takes in a start point and end point and returns the sum of all even numbers in that range.
+
+
+
+Write a method called removeVowels which takes a string parameter and returns a string with all vowels (a, e, i, o, u) removed from it. 
+You can assume the string will have at least one letter and that all characters will be lowercase.
+     -> removeVowels("hello")  hll
+     -> removeVowels("computer")  cmptr
+
+
+
+Write a program that simulates a guessing game. 
+In the guessing game, the computer picks a random number from 0-100 and you have to guess it (use scanner). 
+After each guess, the computer will give you clues like “Too high” or “Too low”. 
+When you guess the correct answer, the computer should print off "You got it!" and then reports how many guesses it took you.
+
+
+
+Given a string, count the number of words ending in 'y' or 'z' -- so the 'y' in "heavy" and the 'z' in "fez" count, but not the 'y' in "yellow" (not case sensitive). 
+We'll say that a y or z is at the end of a word if there is not an alphabetic letter immediately following it.
+     -> countYZ("day fez") → 2
+     -> countYZ("day fyyyz") → 2
+
+
+How many times do you have to roll a pair of dice before they come up snake eyes (roll a one on each die)? 
+Write a method called rollSnakeEyes() that simulates the experiment. 
+The method has no parameters but should return the number of rolls that it makes before the dice come up snake eyes. 
+Use Math.random() to simulate rolling a random die.
+
+The method longestStreak is intended to determine the longest substring of consecutive identical characters in the parameter str and print the result.
+For example, the call longestStreak("CCAAAAATTT!") should print the result A5 because the longest substring of consecutive identical characters is AAAAA.
+Complete the method below. Your implementation should conform to the example above.
+
+
+
+Given a string, return a string where every appearance of the lowercase word "is" has been replaced with "is not". 
+The word "is" should not be immediately preceeded or followed by a letter -- so for example the "is" in "this" does not count. 
+(Note: Character.isLetter(char) tests if a char is a letter.)
+  -> notReplace("is test") → "is not test"
+  -> notReplace("is-is") → "is not-is not"
