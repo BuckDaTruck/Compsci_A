@@ -1,0 +1,72 @@
+Welcome to Bubba's Discount Zoo!
+In this project you will write code to model and maintain one of the finest behind-a-gas-station Zoos in all of Southeastern Mississippi––Bubba's!
+
+You will need to create a minimum of three classes to complete this project:
+Animal.java, where you'll create a basic class for modeling animals
+Zoo.java, where you'll write the code for maintaining an array of Animal residents and doing the types of zookeeper activities mentioned above
+Park.java, where you'll create a zoo, populate it with animals, and do things like feed them, clean their enclosures, and occasionally let them run off into the wild.
+Animal.java
+Your Animal class must include the following:
+A name, species, and a number of legs at a minimum
+At least two constructors
+One that accepts all three parameters
+One that does not take in species and sets that value to “Unknown”
+Getters and Setters for all instance variables
+An eat() method that prints a message something like"<name> ate some food!"
+A free() method that prints a message to the effect of "<name> rushed out of their enclosure and majestically rejoined the wild!"
+An appropriate toString()
+
+Zoo.java
+Your Zoo class must include the following at minimum:
+Instance Variables, minimum
+An array of Animal occupants
+An admission rate, per animal, for admission ticket cost calculations
+A constructor that accepts a capacity (how many enclosures the Zoo has, and therefore how many animal occupants it can support at once)
+A getNumberOfOccupants() method that returns how many animals are currently in the Zoo
+A chargeAdmission() method that returns the cost of touring the Zoo. (The number of animals multiplied by the admission rate)
+A takeIn(Animal) method that tries to take in a new Animal. If successful, the animal occupies the first available enclosure. Otherwise, prints something to the effect of "There aren't any free enclosures to take in <name> the <species>!" and the current occupants are unaffected.
+A feedTheAnimals() method that feeds every animal currently living in the zoo
+A cleanEnclosure(int enclosureNumber) method that cleans the specified enclosure and prints a message. If the enclosure is empty, the message should be something like "You cleaned enclosure <x>. The next occupant will be so pleased!". If the enclosure is occupied, the message printed should be to the effect of "You cleaned enclosure <x>. <name> looks so much happier now!"
+This method should verify that the enclosureNumber provided is valid and print an informative message if not.
+A cleanTheEnclosures() method that cleans all the enclosures using the method above
+An openEnclosure(int enclosureNumber) method that opens the specified enclosure (numbering starts at zero) and prints a message. If the enclosure was already empty, the printed message should say so. If the enclosure had an animal in it, that animal should be removed from the enclosure (i.e. that spot in the array set equal to null) and the Animal's free() method should be called.
+This method should verify that the enclosureNumber provided is valid and print an informative message if not.
+An openAllEnclosures() method that causes maximum pandemonium by freeing all the animals using the method above
+A toString() method that prints out the number and occupant for each enclosure ("EMPTY" if there is no animal currently living in that enclosure)
+
+Park.java
+Your Park class should demonstrate all of the work you put in to create the two classes above. Create a Zoo with some small capacity (3-5 animals), fill it to varying degrees, feed the animals, clean their cages, try to over-fill the zoo, and set an animal free here and there, then fill their enclosure with a new animal. Finally, set them all free! This is where you test that your code works correctly.
+Submission & Scoring
+When grading, I will run your Park, then replace it with my own set of tests with known results. For this reason, it is critical that your class and method naming matches the descriptions above exactly.
+
+Your code must be able to compile and run without error or modification to receive above 70% credit on this project.
+
+Some sample output is shown below:
+
+ENCLOSURES:
+0: Alex the Grey Parrot
+1: Mickey the Mouse
+2: Dolly the Sheep
+There are 3 animals, so admission costs $6.
+There's no more room in the zoo right now! Seabiscuit the Horse won't have anywhere to sleep!
+ENCLOSURES:
+0: Alex the Grey Parrot
+1: Mickey the Mouse
+2: Dolly the Sheep
+Alex ate some food.
+Mickey ate some food.
+Dolly ate some food.
+There is no enclosure #10!
+Mickey rushed through the open enclosure door and majestically rejoined the wild!
+ENCLOSURES:
+0: Alex the Grey Parrot
+1: EMPTY
+2: Dolly the Sheep
+You cleaned enclosure 0. Alex the Grey Parrot looks much happier now!
+You cleaned enclosure 1. The next resident will be so happy!
+You cleaned enclosure 2. Dolly the Sheep looks much happier now!
+You added Seabiscuit the Horse to the zoo!
+ENCLOSURES:
+0: Alex the Grey Parrot
+1: Seabiscuit the Horse
+2: Dolly the
