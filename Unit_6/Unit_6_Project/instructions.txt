@@ -1,0 +1,78 @@
+Spotify Playlist Project
+For this assignment you will write code to model Spotify’s system of playlists. You must implement the following classes and methods, as well as any other attributes, constructor(s), and methods necessary to model the concept. In addition to the classes below, you must also have a driver, showcasing your testing process and your code’s functionality.
+
+Song
+Attributes
+artist
+title
+Methods
+String toString()
+Playlist
+Attributes
+title
+owner (of type SpotifyUser)
+songs (holds data of type Song)
+Methods (called by a SpotifyUser)
+void addSong(Song song)
+boolean containsSong(Song song)
+boolean removeSong(Song song)
+Song playRandomSong()
+String toString()
+
+SpotifyUser
+Attributes
+username
+ownedPlaylists (holds data of type Playlist)
+followedPlaylists (holds data of type Playlist)
+Methods
+Playlist createPlaylist(String title, Song firstSong)
+Verifies that a playlist with that title doesn’t already exist
+If so, return null
+Creates a new, owned playlist
+Returns the generated playlist
+Playlist getOwnedPlaylist(String playlistTitle) 
+Returns the owned Playlist with the provided name
+If none exist, returns null
+boolean deleteOwnedPlaylist(String playlistTitle)
+Deletes a playlist with the given title from ownedPlaylists
+If playlist does not exist, the method returns false
+Otherwise, returns true after the deletion
+boolean addToOwnedPlaylist(Playlist playlist, Song song)
+Verifies that the current user owns the playlist
+If not, returns false and prints the reason
+Verifies that the playlist is still in ownedPlaylists
+If not, returns false and prints the reason
+Verifies that the song is not already in the playlist
+If so, returns false and prints the reason
+Adds the song to the playlist, and returns true
+boolean removeFromOwnedPlaylist(Playlist playlist, Song song)
+Verifies that the current user owns the playlist
+If not, returns false and prints the reason
+Verifies that the playlist is still in ownedPlaylists
+If not, returns false and prints the reason
+Verifies that the song is in the playlist
+If not, returns false and prints the reason
+Deletes the song from the playlist, and returns true
+boolean addToFollowed(Playlist playlist)
+Verifies that the playlist is not already followed
+If so, returns false
+Adds to followedPlaylists and returns true
+boolean removeFromFollowed(Playlist playlist)
+Verifies that the playlist is already followed
+If not, returns false
+Deletes the playlist from followedPlaylists and returns true
+String toString()
+Submission:
+Submit a .zip file of your project folder containing your project files.
+Must contain your first and last name in the .zip file name
+Must contain at least 4 .java files 
+Song
+Playlist
+SpotifyUser
+A tester/driver/client file
+Must demonstrate creation of instances of each class
+Must demonstrate functionality for all methods
+Must contain meaningful print statements.
+Your code must be able to be compiled and run without error or needing modification to receive above a 70% on the assignment
+
+

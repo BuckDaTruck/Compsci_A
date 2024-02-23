@@ -1,0 +1,42 @@
+The Instagram Project
+What You’ll Make
+For this practice you will work  to create a Java program (composed of several classes) that simulates a new social media platform: Instagram.
+
+Instagram, which is completely new and unprecedented in every way, is a platform on which InstaUsers can create posts that consist of an imageUrl and a caption.
+
+Each InstaUser has a first and last name and a “handle”, which Instagram automatically precedes with the “@” symbol.
+InstaUsers connect by “following” one another.
+Following is a one-way street (meaning even if I follow you, you might not follow me back).
+InstaUsers can follow up to three other InstaUsers but may not follow the same user twice at once or follow themselves.
+InstaUsers can be followed by up to three users at a time.
+
+Coding & Testing Requirements
+At a minimum, your program must include the following classes:
+InstaUser
+Constructor takes first name, last name, and handle
+Ability to follow and unfollow other InstaUsers
+Ability to make Posts
+A toString method that outputs something like this:
+
+Post
+Constructor takes an image URL, caption, and the InstaUser who made the post
+
+Your program should handle all invalid input gracefully. For example, messages like the following should be printed to the screen when these scenarios pop up in testing your code:
+
+@broncoBoi followed @C_H_I_E_F_K_E_I_T_H!
+@broncoBoi can’t follow themself!
+@broncoBoi can’t unfollow @skittles without following them first!
+@broncoBoi tried to follow @skittles but already follows three other users!
+@C_H_I_E_F_K_E_I_T_H can’t follow @skittles because three people already follow that account!
+New post from @broncoBoi: Go Cats! Image: https://flatcatnet.files.wordpress.com/2016/01/flatcatsquare.jpg
+
+I highly recommend you create a Main class of your own that allows you to create InstaUsers, Posts, and have them follow/unfollow one another to see that your program works correctly.
+
+Scoring
+A large portion of your project score will come from the results of running your program against a suite of automated tests. These tests will create InstaUsers and Posts according to the specifications above, and have various users try to follow/unfollow one another.
+
+If your program does not compile and run all tests to completion without crashing/erroring out, you are not eligible for extra credit.
+
+Your code must be thoughtfully organized, readable, and include expressive names for functions, variables, and any additional classes you decide to create. Use arrays and loops where appropriate (if you are naming things something1, something2, something3, etc. you should be using an array, if you are repeating nearly-identical lines of code over and over, you should be using a loop).
+Submitting Your Work
+Submit to Schoology a single .zip file containing all Java source code necessary to run and test your project.
